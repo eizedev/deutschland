@@ -6,14 +6,17 @@
 [![Run Python 🐍 tests](https://github.com/bundesAPI/deutschland/actions/workflows/runtests.yml/badge.svg?branch=main)](https://github.com/bundesAPI/deutschland/actions/workflows/runtests.yml)
 
 # Deutschland
+
 A python package that gives you easy access to the most valuable datasets of Germany.
 
 ## Installation
+
 ```bash
 pip install deutschland
 ```
 
 ## Geographic data
+
 Fetch information about streets, house numbers, building outlines, …
 
 ```python
@@ -29,12 +32,12 @@ print(data["Adresse"][0])
 # {'geometry': {'type': 'Point', 'coordinates': (13.422642946243286, 52.51500157651358)}, 'properties': {'postleitzahl': '10179', 'ort': 'Berlin', 'ortsteil': 'Mitte', 'strasse': 'Holzmarktstraße', 'hausnummer': '55'}, 'id': 0, 'type': 'Feature'}
 ```
 
-
-
+For the detailed documentation of this API see [here](https://adv-smart.de/docs/dokumentation/web_vektor_datenmodell.html)
 
 ## Company Data
 
 ### Bundesanzeiger
+
 Get financial reports for all german companies that are reporting to Bundesanzeiger.
 
 ```python
@@ -46,9 +49,11 @@ data = ba.get_reports("Deutsche Bahn AG")
 print(data.keys())
 # dict_keys(['Jahresabschluss zum Geschäftsjahr vom 01.01.2020 bis zum 31.12.2020', 'Konzernabschluss zum Geschäftsjahr vom 01.01.2020 bis zum 31.12.2020\nErgänzung der Veröffentlichung vom 04.06.2021',
 ```
+
 *Big thanks to Nico Duldhardt and Friedrich Schöne, who [supported this implementation with their machine learning model](https://av.tib.eu/media/52366).*
 
 ### Handelsregister
+
 Fetch general company information about any company in the Handelsregister.
 
 ```python
@@ -59,10 +64,10 @@ hr.search(keywords="Deutsche Bahn Aktiengesellschaft")
 print(hr)
 ```
 
-
 ## Consumer Protection Data
 
 ### Lebensmittelwarnung
+
 Get current product warnings provided by the german federal portal lebensmittelwarnung.de.
 
 ```python
@@ -79,7 +84,9 @@ print(data)
 ### NRW
 
 #### VERENA
+
 Get open substitute teaching positions in NRW from https://www.schulministerium.nrw.de/BiPo/Verena/angebote
+
 ```python
 from deutschland import Verena
 v = Verena()
@@ -114,6 +121,7 @@ try:
 except autobahn.ApiException as e:
     print("Exception when calling DefaultApi->get_charging_station: %s\n" % e)
 ```
+
 For the detailed documentation of this API see [here](https://github.com/bundesAPI/deutschland/blob/main/docs/autobahn/README.md)
 
 
@@ -132,32 +140,47 @@ stories = presseportal.get_stories()
 ## Auto-Generated API-Clients
 
 ### bundesrat
+
 For the detailed documentation of this API see [here](https://github.com/bundesAPI/deutschland/blob/main/docs/bundesrat/README.md)
 ### bundestag
+
 For the detailed documentation of this API see [here](https://github.com/bundesAPI/deutschland/blob/main/docs/bundestag/README.md)
 ### destatis
+
 For the detailed documentation of this API see [here](https://github.com/bundesAPI/deutschland/blob/main/docs/destatis/README.md)
 ### dwd
+
 For the detailed documentation of this API see [here](https://github.com/bundesAPI/deutschland/blob/main/docs/dwd/README.md)
 ### interpol
+
 For the detailed documentation of this API see [here](https://github.com/bundesAPI/deutschland/blob/main/docs/interpol/README.md)
 ### jobsuche
+
 For the detailed documentation of this API see [here](https://github.com/bundesAPI/deutschland/blob/main/docs/jobsuche/README.md)
 ### ladestationen
+
 For the detailed documentation of this API see [here](https://github.com/bundesAPI/deutschland/blob/main/docs/ladestationen/README.md)
 ### mudab
+
 For the detailed documentation of this API see [here](https://github.com/bundesAPI/deutschland/blob/main/docs/mudab/README.md)
 ### nina
+
 For the detailed documentation of this API see [here](https://github.com/bundesAPI/deutschland/blob/main/docs/nina/README.md)
 ### polizei_brandenburg
+
 For the detailed documentation of this API see [here](https://github.com/bundesAPI/deutschland/blob/main/docs/polizei_brandenburg/README.md)
 ### risikogebiete
+
 For the detailed documentation of this API see [here](https://github.com/bundesAPI/deutschland/blob/main/docs/risikogebiete/README.md)
 ### smard
+
 For the detailed documentation of this API see [here](https://github.com/bundesAPI/deutschland/blob/main/docs/smard/README.md)
 ### strahlenschutz
+
 For the detailed documentation of this API see [here](https://github.com/bundesAPI/deutschland/blob/main/docs/strahlenschutz/README.md)
 ### travelwarning
+
 For the detailed documentation of this API see [here](https://github.com/bundesAPI/deutschland/blob/main/docs/travelwarning/README.md)
 ### zoll
+
 For the detailed documentation of this API see [here](https://github.com/bundesAPI/deutschland/blob/main/docs/zoll/README.md)
